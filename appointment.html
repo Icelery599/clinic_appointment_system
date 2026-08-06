@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iLadi Clinic · Elegant appointment</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <!-- APPOINTMENT -->
+        <div id="page-appoint" class="hidden-page">
+            <h2 style="color: #2f1812;"><i class="fas fa-calendar-check" style="color: #b78338;"></i> Book an Appointment</h2>
+            <div class="appoint-grid">
+                <div>
+                    <p><i class="fas fa-clock" style="color: #40686a;"></i> Mon–Sat 9am–5pm · Sun 12pm–5pm</p>
+                    <div class="time-slots">
+                        <span class="time-slot" onclick="bookSlot('Mon 10:30')">Mon 10:30</span>
+                        <span class="time-slot" onclick="bookSlot('Wed 14:00')">Wed 14:00</span>
+                        <span class="time-slot" onclick="bookSlot('Fri 09:00')">Fri 09:00</span>
+                        <span class="time-slot" onclick="bookSlot('Sun 13:00')">Sun 13:00</span>
+                        <span class="time-slot" onclick="bookSlot('Tue 11:00')">Tue 11:00</span>
+                        <span class="time-slot" onclick="bookSlot('Thu 15:30')">Thu 15:30</span>
+                    </div>
+                    <div id="bookingMsg" style="margin-top: 0.8rem; color: #40686a;"><i class="fas fa-info-circle"></i> Click a time to book</div>
+                </div>
+                <div class="ai-assistant">
+                    <h4><i class="fas fa-robot" style="color: #b78338;"></i> Sayam AI</h4>
+                    <div class="ai-msg" id="aiMessage"><i class="fas fa-hand-peace"></i> Hello, I'm Sayam. How can I help?</div>
+                    <div class="ai-options">
+                        <button onclick="aiRespond('doctor')"><i class="fas fa-user-md"></i> See a doctor</button>
+                        <button onclick="aiRespond('conditions')"><i class="fas fa-notes-medical"></i> Explain conditions</button>
+                        <button onclick="aiRespond('pricing')"><i class="fas fa-tag"></i> Pricing</button>
+                        <button onclick="aiRespond('review')"><i class="fas fa-star"></i> Give review</button>
+                    </div>
+                    <div id="aiFeedback" style="margin-top: 0.5rem; font-size: 0.85rem; color: #6e5b4f;"></div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+</body>
