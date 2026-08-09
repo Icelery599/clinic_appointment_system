@@ -1,0 +1,8 @@
+{
+  "name": "iladi/clinic-appointment-system",
+  "description": "PHP and MySQL clinic appointment management system.",
+  "type": "project",
+  "require": {
+    "php": ">=8.4"
+  }
+}
