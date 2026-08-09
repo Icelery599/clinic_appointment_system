@@ -1,0 +1,2 @@
+<?php $pageTitle='Departments'; include __DIR__.'/../includes/header.php'; require_login('administrator'); $rows=Database::connection()->query('SELECT * FROM departments ORDER BY name')->fetchAll(); ?>
+<h1>Departments</h1><div class="row g-3"><?php foreach($rows as $r): ?><div class="col-md-4"><div class="card"><div class="card-body"><h5><?= e($r['name']) ?></h5><p><?= e($r['description']) ?></p></div></div></div><?php endforeach; ?></div><?php include __DIR__.'/../includes/footer.php'; ?>

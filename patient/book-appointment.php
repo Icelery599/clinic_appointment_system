@@ -1,0 +1,9 @@
+<?php
+use App\Services\AppointmentService;
+$pageTitle='Book Appointment'; include __DIR__.'/../includes/header.php'; require_login();
+$pdo=Database::connection();
+if ($_SERVER['REQUEST_METHOD']==='POST') { verify_csrf(); (new AppointmentService())->book($_POST); flash('success','Appointment request submitted for approval.'); redirect(role_home(current_user()['role'])); }
+$patients=$pdo->query('SELECT id, fullname FROM patients ORDER BY fullname')->fetchAll(); $doctors=$pdo->query('SELECT d.id, u.name, dep.name department FROM doctors d JOIN users u ON u.id=d.user_id JOIN departments dep ON dep.id=d.department_id ORDER BY u.name')->fetchAll();
+?>
+<div class="card"><div class="card-body"><h1 class="h3">Book Appointment</h1><form method="post" class="row g-3"><?= csrf_field() ?><div class="col-md-6"><label class="form-label">Patient</label><select class="form-select" name="patient_id"><?php foreach($patients as $p): ?><option value="<?= (int)$p['id'] ?>"><?= e($p['fullname']) ?></option><?php endforeach; ?></select></div><div class="col-md-6"><label class="form-label">Doctor</label><select class="form-select" name="doctor_id"><?php foreach($doctors as $d): ?><option value="<?= (int)$d['id'] ?>"><?= e($d['name'].' - '.$d['department']) ?></option><?php endforeach; ?></select></div><div class="col-md-4"><label class="form-label">Date</label><input class="form-control" type="date" name="appointment_date" required></div><div class="col-md-4"><label class="form-label">Time</label><input class="form-control" type="time" name="appointment_time" required></div><div class="col-md-12"><label class="form-label">Reason</label><textarea class="form-control" name="reason" required></textarea></div><div class="col-12"><button class="btn btn-primary">Submit booking</button></div></form></div></div>
+<?php include __DIR__.'/../includes/footer.php'; ?>

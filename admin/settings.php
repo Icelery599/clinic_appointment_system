@@ -1,0 +1,1 @@
+<?php $pageTitle='System Settings'; include __DIR__.'/../includes/header.php'; require_login('administrator'); ?><h1>System Settings</h1><p class="text-muted">Configure clinic name, notification providers, payment settings, uploads, backup policy, and audit logging from this module.</p><?php include __DIR__.'/../includes/footer.php'; ?>
