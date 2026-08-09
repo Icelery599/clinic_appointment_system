@@ -2,10 +2,11 @@
 <section class="hero p-5 rounded-4 text-white mb-4">
   <div class="row align-items-center">
     <div class="col-lg-7">
-      <h1 class="display-5 fw-bold">Modern clinic appointments built with PHP 8 and MySQL</h1>
+      <h1 class="display-5 fw-bold">Modern clinic appointments built for PHP <?= e(PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION) ?> and MySQL</h1>
       <p class="lead">Book visits, manage doctors, approve appointments, record diagnoses, issue prescriptions, and report on clinic performance.</p>
       <a class="btn btn-light btn-lg" href="<?= BASE_URL ?>/register.php">Register as Patient</a>
       <a class="btn btn-outline-light btn-lg" href="<?= BASE_URL ?>/login.php">Staff Login</a>
+      <a class="btn btn-outline-light btn-lg" href="<?= BASE_URL ?>/about.php">About the Clinic</a>
     </div>
   </div>
 </section>

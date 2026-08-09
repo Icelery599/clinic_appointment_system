@@ -5,6 +5,7 @@
     <div class="collapse navbar-collapse" id="mainNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>/index.php">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>/about.php">About</a></li>
         <?php if ($user = current_user()): ?>
           <li class="nav-item"><a class="nav-link" href="<?= BASE_URL . role_home($user['role']) ?>">Dashboard</a></li>
           <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>/logout.php">Logout (<?= e($user['name']) ?>)</a></li>
