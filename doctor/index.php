@@ -1,0 +1,2 @@
+<?php use App\Services\AppointmentService; $pageTitle='Doctor Dashboard'; include __DIR__.'/../includes/header.php'; require_login('doctor'); $appointments=(new AppointmentService())->listForRole(current_user()); ?>
+<h1>Doctor Dashboard</h1><p class="text-muted">View today's appointments, patient history, and update appointment status.</p><?php include __DIR__.'/../includes/appointments-table.php'; include __DIR__.'/../includes/footer.php'; ?>

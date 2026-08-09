@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const canvas=document.getElementById('monthlyChart');if(canvas&&window.Chart){new Chart(canvas,{type:'bar',data:{labels:JSON.parse(canvas.dataset.labels||'[]'),datasets:[{label:'Monthly appointments',data:JSON.parse(canvas.dataset.values||'[]'),backgroundColor:'#0d6efd'}]}})}});

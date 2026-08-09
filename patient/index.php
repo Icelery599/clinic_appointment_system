@@ -1,0 +1,2 @@
+<?php use App\Services\AppointmentService; $pageTitle='Patient Dashboard'; include __DIR__.'/../includes/header.php'; require_login('patient'); $appointments=(new AppointmentService())->listForRole(current_user()); ?>
+<h1>Patient Dashboard</h1><p class="text-muted">Book, cancel, or reschedule appointments and view prescriptions and medical history.</p><a class="btn btn-primary mb-3" href="<?= BASE_URL ?>/patient/book-appointment.php">Book Appointment</a><?php include __DIR__.'/../includes/appointments-table.php'; include __DIR__.'/../includes/footer.php'; ?>

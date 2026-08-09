@@ -1,0 +1,2 @@
+<?php use App\Services\AppointmentService; $pageTitle='Receptionist Dashboard'; include __DIR__.'/../includes/header.php'; require_login('receptionist'); $appointments=(new AppointmentService())->listForRole(current_user()); ?>
+<h1>Receptionist Dashboard</h1><p class="text-muted">Register patients, book visits, check patients in, reschedule, and print slips.</p><a class="btn btn-primary mb-3" href="<?= BASE_URL ?>/patient/book-appointment.php">Book Appointment</a><?php include __DIR__.'/../includes/appointments-table.php'; include __DIR__.'/../includes/footer.php'; ?>
